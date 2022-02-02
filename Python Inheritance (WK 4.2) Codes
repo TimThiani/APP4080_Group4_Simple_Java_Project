@@ -1,0 +1,110 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled2.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOLGylyCnC42FdtDtY+zTEA",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/TimThiani/APP4080_Group4_Simple_Java_Project/blob/main/Python%20Inheritance%20(WK%204.2)%20Codes\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 13,
+      "metadata": {
+        "id": "M7fMdYV4qH1y"
+      },
+      "outputs": [],
+      "source": [
+        "class House:\n",
+        "\n",
+        "  #class variable\n",
+        "  count = 0\n",
+        "\n",
+        "  def __init__(self, typ, rooms):\n",
+        "    self._typ = typ\n",
+        "    self._rooms = rooms\n",
+        "    self.__class__.count += 1\n",
+        "\n",
+        "  def setType(self, typ):\n",
+        "    self._typ = typ\n",
+        "\n",
+        "  def setRooms(self, rooms):\n",
+        "    self._rooms = rooms\n",
+        "\n",
+        "  def getType(self):\n",
+        "    return self._typ\n",
+        "\n",
+        "  def getRooms(self):\n",
+        "    return self._rooms\n",
+        "\n",
+        "  def getCount(self):\n",
+        "    return self.__class__.count\n",
+        "\n",
+        "  #Redefine the __str__ method inheritd from object\n",
+        "  def __str__(self):\n",
+        "    return \"House Type: \" + self._typ + \\\n",
+        "    \"Number of Rooms: \" + str(self._rooms)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "h1 = House('Flat', 5)\n",
+        "\n",
+        "h2 = House('Bungalow', 8)\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "fOytidcKtlSi"
+      },
+      "execution_count": 15,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "h1.getCount()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5L1z81X4ufLH",
+        "outputId": "94804ae8-75f2-415a-daed-ac594fcf8cf9"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "3"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 16
+        }
+      ]
+    }
+  ]
+}
